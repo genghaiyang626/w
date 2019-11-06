@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>iBATIS Home</title><script type="text/javascript" src="popup.js">  </script>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <title>Artificial by Free Css Templates</title>
+  <meta name="keywords" content="ibatis, database, data, mapper, ORM, Java, .NET, "/>
+  <meta name="description" content="iBATIS Data Mapping Framework for Java and .NET"/>
+  <link href="default.css" rel="stylesheet" type="text/css" media="screen"/>
+</head>
+<body>
+<!-- start header -->
+<div id="feeds">
+  <b>&nbsp;|&nbsp;</b>
+  <a href="http://www.apache.org">Apache Software Foundation</a>
+</div>
+<hr/>
+<div id="logo">
+  <img style="float:right" alt="ibatis" src="images/logo.gif"/><img alt="ibatis" src="images/ibatis.gif"/>
+</div>
+<hr/>
+<!-- end header -->
+<!-- start menu -->
+<div id="menu">
+  <ul>
+  </ul>
+</div>
+<!-- end menu -->
+<!-- start page -->
+<div id="page">
+<div style="background: #AA0000"><h2>Apache iBATIS is retired at the apache software foundation (2010/06/16) </h2>
+<h3>The original project team has moved to MyBatis hosted at Google Code. See <a href="http://www.mybatis.org/">http://www.mybatis.org/</a> for more.</h3>
+<b>for more information, please view the announcement below and refer to the <a href="http://attic.apache.org/projects/ibatis.html">Attic</a>. </b>
+</div>
+
+  <!-- start content --><div id="content">   <div class="post">    <h1 class="title">[DETAILS BELOW]</h1>    <p class="meta">      <small>Posted by Clinton Begin on May 21, 2010</small>    </p>    <div class="entry">     <h2>iBATIS Project Team Moving to Google Code</h2>    	<p>ANNOUNCEMENT</p>	<p>Eight years ago in 2002, I created the iBATIS Data Mapper and introduced SQL Mapping as an approach to persistence layer development.  Shortly thereafter, I donated the iBATIS name and code to the Apache Software Foundation.  The ASF has been the home of iBATIS for the past six years. </p>	<p>A lot changes in six years.  By 2010 we&#8217;ve seen a great deal of innovation and change in the areas of development methodology, source control, social networking and open-source infrastructure.  As part of the ASF, iBATIS has had only limited ability to benefit from some of these new developments&#8212;some of which are not all that new anymore.</p>	<p>Our project has a committed team, a vibrant community, a great culture of cooperation and some exciting new releases.  But we believe we can make it even better. </p>	<p>Therefore, the entire core development team of iBATIS has decided to continue the development of the framework at a new home and with a new name. </p>	<p>This includes all of the iBATIS for Java committers:</p>  <ul>  <li> Clinton Begin  <li> Brandon Goodin  <li> Jeff Butler  <li> Larry Meadors  <li> Nathan Maves  <li> Kai Grabfelder  </ul>	<p>And all of the iBATIS.NET committers:</p>  <ul>  <li> Michael McCurrey  <li> Ron Grabowski  <li> Michael Schall  </ul>	<p>NEW NAME AND HOME</p>	<p>Both the Java and .NET project teams have forked the software to Google Code, where they&#8217;ll continue to maintain it and create new releases.</p>  <ul> <li> The names of the new projects are:  MyBatis and MyBatis.NET <li> The website for the new projects is:  <a href="http://www.mybatis.org">http://www.mybatis.org</a> <li> Java Google Code Project:  <a href="http://code.google.com/p/mybatis/">http://code.google.com/p/mybatis/</a> <li> .NET Google Code Project:  <a href="http://code.google.com/p/mybatisnet/">http://code.google.com/p/mybatisnet/</a>  </ul>	<p>QUESTIONS &#38; ANSWERS</p>	<p>Some answers to obvious questions:</p>   <ul><li> The license will not change <li> Your code will be fully compatible <li> The package names and namespaces won&#8217;t change anytime soon <li> iBATIS 2 and 3 will be supported, with both 2.3.5 GA and 3.0.1 GA releases becoming available immediately <li> iBATIS.NET 1.x and 3.x will be supported, with a new release coming available soon <li> None of the existing Apache resources will be deleted (not any time soon at least) <li> The Apache project will be archived in the Apache Attic, if or when it becomes stale  </ul>	<p>DATES</p>  <ul>  <li> Now &#8211; The Confluence wiki is already frozen (due to login issues)  <li> By June 23rd &#8211; The Jira issue tracker will be changed to read-only mode  <li> By June 30th &#8211; The team (mentioned above) will unsubscribe from the Apache mailing lists  <li> July 1st, 2010 &#8211; Marks the 8th birthday of the framework!  </ul>	<p>GOALS</p>	<p>We believe can improve a number of things by making this move, including (but not limited to):</p>  <ul>  <li> Lighter process  <li> More frequent releases  <li> Unified infrastructure  <li> Modernized tools (source control etc.)  <li> Build and deployment automation  <li> Easier to use mailing lists  <li> Single sign-on for users  <li> Greater community involvement  <li> More productive development team  </ul>	<p>NEXT STEPS</p>	<p>There are only a few things you need to do immediately, and a couple that you&#8217;ll need to do eventually.</p>  <ol>  <li> Sign up for new mailing lists (now)  <li> Use the new issue tracker and wiki (now)  <li> Change bookmarks / links to the new site (now)  <li> Download new build (when you need your next build)  <li> Change DTD/XSD DOCTYPE headers in XML files (after you upgrade in #4, but old doctypes will work with the new framework too)  </ol>	<p>Full details for each of these steps can be found at the following Wiki page.</p>	<p><a href="http://code.google.com/p/mybatis/wiki/DocIbatis2MyBatis">http://code.google.com/p/mybatis/wiki/DocIbatis2MyBatis</a></p>	<p>Making this move is a big decision and a lot of work.  However, we truly believe that the efforts will pay off. </p>	<p>We&#8217;d like to thank the Apache Software Foundation for the past six years of working together.</p>	<p>We&#8217;ll see you all on the other side.</p>	<p>Cheers,</p>	<p>Clinton Begin<br />Original Creator of iBATIS<br /><a href="http://www.mybatis.org">http://www.mybatis.org</a></p>   </div>  </div></div><!-- end content --><!-- start sidebar --><div id="sidebar"></div><!-- end sidebar -->  <div style="clear: both;">&nbsp;</div>
+  
+</div>
+<!-- end page -->
+<div id="footer">
+  <p id="legal">&copy;2009 Apache Software Foundation. All Rights Reserved.
+    <br/>Designed by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+  _uacct = "UA-592589-1";
+  urchinTracker();
+</script>
+</body>
+</html>

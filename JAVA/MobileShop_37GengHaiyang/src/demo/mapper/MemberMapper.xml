@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="demo.mapper.MemberMapper">
+	<select id="findById" parameterType="int"
+		resultType="demo.entity.Member">
+		select *from member where member_id=#{member_id}
+	</select>
+	
+	<select id="findMemberInformation" parameterType="demo.entity.Member"
+	 resultType="demo.entity.Member">
+	select *from member where 1=1
+	<choose>
+		<when test="name!=null">
+			and name=#{name}
+		</when>
+		<when test="email!=null">
+			and email=#{email}
+		</when>
+		<when test="moble!=null">
+			and moble=#{moble}
+		</when>
+		<otherwise>
+		</otherwise>
+	</choose>
+	</select>
+
+	<insert id="save"
+		parameterType="demo.entity.Member">
+		insert into member (
+		name
+		,password
+		,email
+		,gender
+		,moble
+		,image
+		,create_time
+		,last_time
+		) VALUES (
+		#{name}
+		,#{password}
+		,#{email}
+		,#{gender}
+		,#{moble}
+		,#{image}
+		,#{create_time}
+		,#{last_time}
+		)
+	</insert>
+	
+	<delete id="deleteById" parameterType="int">
+		delete from member where member_id = #{member_id}
+	</delete>
+ 
+	<update id="updatePassword"
+		parameterType="demo.entity.Member">
+		update member SET
+		name = #{name}
+		,password = #{password}
+		,email = #{email}
+		,gender = #{gender}
+		,moble =#{moble}
+		,image = #{image}
+		,create_time = #{create_time}
+		,last_time = #{last_time}
+		WHERE member_id = #{member_id}
+	</update>
+
+	<update id="dynamicUpdate" parameterType="demo.entity.Member">
+	update member
+	<trim suffixOverrides=",">
+		<set>
+		<if test="name!=null">
+			name=#{name},
+		</if>
+		<if test="password!=null">
+			password=#{password},
+		</if>
+		<if test="email!=null">
+			email=#{email},
+		</if>
+		<if test="gender!=null">
+			gender=#{gender},
+		</if>
+		<if test="moble!=null">
+			moble=#{moble},
+		</if>
+		<if test="image!=null">
+			image=#{image},
+		</if>
+		<if test="create_time!=null">
+			create_time=#{create_time},
+		</if>
+		<if test="last_time!=null">
+			last_time=#{last_time}
+		</if>
+	</set>
+	</trim>
+	WHERE member_id = #{member_id}
+</update>	
+
+	
+	<select id="findAddressMemberById" parameterType="int" 
+	resultMap="AddressMemberMap">
+	<!-- resultType="demo.entity.MemberAddress"> -->
+	select addr.*,men.member_id as id,men.name,men.password as pwd,men.email,men.moble as member_moble,men.gender,men.image
+	,men.create_time as member_create_time,men.last_time as member_last_time FROM member men,mem_address addr where addr.member_id = 
+	men.member_id and addr.member_id = #{member_id}
+	</select>
+	<!--一对多  -->
+	<resultMap type="demo.entity.Member" id="AddressMemberMap">
+		<id column="id" property="member_id" />
+		<result column="name" property="name" />
+		<result column="pwd" property="password" />
+		<result column="member_moble" property="moble" />
+		<result column="email" property="email" />
+		<result column="gender" property="gender" />
+		<result column="image" property="image" />
+		<result column="member_create_time" property="create_time" />
+		<result column="member_last_time" property="last_time" />
+		<collection property="memberAddresses"
+			javaType="java.util.List" ofType="demo.entity.MemberAddress">
+			<id column="address_id" property="address_id" />
+			<result column="member_id" property="member_id" />
+			<result column="sheng" property="sheng" />
+			<result column="shi" property="shi" />
+			<result column="qu" property="qu" />
+			<result column="xx_address" property="xx_address" />
+			<result column="person" property="person" />
+			<result column="telephone" property="telephone" />
+			<result column="createtime" property="createtime" />
+			<result column="lasttime" property="lasttime" />
+		</collection>
+	</resultMap>
+	
+	  <!-- 多对一
+	<resultMap type="demo.entity.MemberAddress"
+	id="AddressMemberMap">
+	<id column="address_id" property="address_id" />
+	<result column="member_id" property="member_id" />
+	<result column="sheng" property="sheng" />
+	<result column="shi" property="shi" />
+	<result column="qu" property="qu" />
+	<result column="xx_address" property="xx_address" />
+	<result column="person" property="person" />
+	<result column="telephone" property="telephone" />
+	<result column="createtime" property="createtime" />
+	<result column="lasttime" property="lasttime" />
+	<association property="member"
+		javaType="demo.entity.Member">
+		<id column="id" property="member_id" />
+		<result column="name" property="name" />
+		<result column="pwd" property="password" />
+		<result column="member_moble" property="moble" />
+		<result column="email" property="email" />
+		<result column="gender" property="gender" />
+		<result column="image" property="image" />
+		<result column="member_create_time" property="create_time" />
+		<result column="member_last_time" property="last_time" />
+	</association>
+</resultMap> 
+ -->
+</mapper>

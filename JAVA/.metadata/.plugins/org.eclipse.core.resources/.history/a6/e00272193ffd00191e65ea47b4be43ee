@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo.GoodsMapper.TagMapper">
+	<select id="findTagGoodsByTagId" parameterType="int"
+		resultMap="TagGoodsMap">
+		select tg.name as tag_name,gd.name as goods_name,gc.name as gc_name,bd.name as bd_name
+		from ms_goods as gd
+		join ms_tag as tg
+		join ms_tag_goods_ref as gf
+		join ms_goods_cat as gc
+		join ms_brand as bd
+		where tg.tag_id = gf.tag_id
+		and gf.goods_id = gd.goods_id
+		and gc.cat_id = gd.cat_id
+		and bd.brand_id = gd.brand_id
+		and tg.tag_id = #{td_tag_id}
+	</select>
+	<resultMap type="demo.entity.TagCustom" id="TagGoodsMap">
+	<id column="tg_tag_id" property="tag_id" />
+	<result column="tag_name" property="name" />
+	<collection property="goods">
+		<result column="goods_name" property="name" />
+		<association property="goodscat">
+			<result column="gc_name" property="name" />
+		</association>
+		<association property="brand">
+			<result column="bd_name" property="name" />
+		</association>
+	</collection>
+</resultMap>
+<!-- 
+		<association property="cat_id">
+			<result column="gc_name" property="name" />
+		</association>
+		<association property="brand_id">
+			<result column="bd_name" property="name" />
+		</association>
+		 -->
+</mapper>

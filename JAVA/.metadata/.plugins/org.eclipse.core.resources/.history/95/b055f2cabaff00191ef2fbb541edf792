@@ -1,0 +1,17 @@
+
+public class Rectangle {
+	private double width;
+	private double height;
+	private String color;
+	public Rectangle() {
+		// TODO Auto-generated constructor stub
+		width=0;
+		height=0;
+		color="Ã»ÓÐÑÕÉ«";
+	}
+	public Rectangle(double x,double y,String z) {
+		width=x;
+		height=y;
+		color=z;
+	}
+}

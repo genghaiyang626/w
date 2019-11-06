@@ -1,0 +1,7 @@
+package demo.entity;
+
+import java.util.List;
+
+public class TagCustom extends Tag {
+	List <Goods> goods; 
+}

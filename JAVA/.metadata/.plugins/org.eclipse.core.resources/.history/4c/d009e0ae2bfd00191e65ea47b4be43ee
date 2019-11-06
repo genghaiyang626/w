@@ -1,0 +1,17 @@
+package demo.entity;
+
+import java.security.Timestamp;
+
+public class GoodsCat {
+	private int cat_id;
+	private String cat_path;
+	private int goods_count;
+	private String image;
+	private Timestamp creatime;
+	private int list_show;
+	private Timestamp modifytime;
+	private String name;
+	private int parent_id;
+	private int sort;
+	private int type_id;
+}

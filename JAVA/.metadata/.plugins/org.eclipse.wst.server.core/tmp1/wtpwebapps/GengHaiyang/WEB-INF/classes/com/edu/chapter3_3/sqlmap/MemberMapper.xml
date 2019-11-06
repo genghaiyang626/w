@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<select id="findById" parameterType="int"
+		resultType="com.edu.chapter3_3.entity.Member.java">
+		select *from member where member_id=#{id}
+	</select>
+	<insert id="save"
+		parameterType="/GengHaiyang/src/com/edu/chapter3_3/entity/Member.java">
+		insert into member (
+		name
+		,password
+		,email
+		,gender
+		,moble
+		,image
+		,create_time
+		,last_time
+		) VALUES (
+		#{name}
+		,#{password}
+		,#{email}
+		,#{gender}
+		,#{moble}
+		,#{image}
+		,#{create_time}
+		,#{last_time}
+		)
+	</insert>
+
+	<delete id="deleteById" parameterType="int">
+		delete from member where member_id = #{}
+	</delete>
+
+	<update id="upById"
+		parameterType="/GengHaiyang/src/com/edu/chapter3_3/entity/Member.java">
+		update member SET
+		name = #{name}
+		,password = #{password}
+		,email = #{email}
+		,gender = #{gender}
+		,moble =#{moble}
+		,image = #{image}
+		,create_time = #{create_time}
+		,last_time = #{last_time}
+		WHERE member_id = #{member_id}
+	</update>
+</mapper>

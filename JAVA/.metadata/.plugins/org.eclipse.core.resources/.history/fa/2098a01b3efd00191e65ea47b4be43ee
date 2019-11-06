@@ -1,0 +1,9 @@
+package demo.GoodsMapper;
+
+import java.util.List;
+
+import demo.entity.TagCustom;
+
+public interface TagMapper {
+	public List<TagCustom> findTagGoodsByTagId(int id);
+}

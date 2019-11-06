@@ -1,0 +1,13 @@
+
+public class TestPets {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Pets p1=new Pets();
+		Pets p2=new Pets("заза",2,30.6);
+		p1.Eat(600);
+		p1.Run(3000);
+		
+	}
+
+}

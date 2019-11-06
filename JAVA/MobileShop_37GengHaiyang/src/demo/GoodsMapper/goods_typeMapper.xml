@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo.GoodsMapper.goods_typeMapper">
+
+<select id="findById" parameterType="int"
+		resultType="demo.entity.goods_type">
+		select * from ms_goods_type where type_id=#{id}
+</select>
+
+<delete id="deleteById"  parameterType="int">
+delete from ms_goods_type where type_id = #{id}
+</delete>
+
+<insert id="save" parameterType="demo.entity.goods_type">
+insert into ms_goods_type (
+		name
+		,params
+		,is_physical
+		,disabled
+		,creatime
+		,modifytime
+		) VALUES (
+		#{name}
+		,#{params}
+		,#{is_physical}
+		,#{disabled}
+		,#{creatime}
+		,#{modifytime}
+		)
+</insert>
+
+
+<update id="update" parameterType="demo.entity.goods_type">
+update ms_goods_type SET
+		name = #{name}
+		,params = #{params}
+		,modifytime =#{modifytime}
+		WHERE type_id = #{id}
+</update>
+
+<update id="dynamicUpdate" parameterType="demo.entity.goods_type">
+	update ms_goods_type
+	<trim suffixOverrides=",">
+		<set>
+		<if test="name!=null">
+			name=#{name},
+		</if>
+		<if test="params!=null">
+			params=#{params},
+		</if>
+		<if test="disabled!=null">
+			disabled=#{disabled},
+		</if>
+		<if test="is_physical!=null">
+			is_physical=#{is_physical},
+		</if>
+		<if test="creatime!=null">
+			creatime=#{creatime},
+		</if>
+		<if test="modifytime!=null">
+			modifytime=#{modifytime}
+		</if>
+	</set>
+	</trim>
+	WHERE type_id = #{type_id}
+</update>	
+
+</mapper>

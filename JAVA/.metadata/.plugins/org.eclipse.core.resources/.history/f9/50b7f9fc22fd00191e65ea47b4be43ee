@@ -1,0 +1,28 @@
+package demo.entity;
+
+import java.security.Timestamp;
+
+public class Goods {
+	private int goods_id;
+	private double weight;
+	private int view_count;
+	private String thumbnail;
+	private String sn;
+	private String small;
+	private double price;
+	private String params;
+	private String original;
+	private String name;
+	private double mktprice;
+	private int mkt_enable;
+	private Timestamp last_modify;
+	private String intro;
+	private String description;
+	private Timestamp creatime;
+	private double cost;
+	private int cat_id;
+	private int buy_count;
+	private String brief;
+	private int brand_id;
+	private String big;
+}

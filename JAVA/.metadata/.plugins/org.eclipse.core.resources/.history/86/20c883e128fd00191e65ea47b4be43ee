@@ -1,0 +1,7 @@
+package demo.GoodsMapper;
+
+import java.util.List;
+
+public interface TagMapper {
+	public List<TagCustom> findTagGoodsByTagId(int id) throws Exception;
+}

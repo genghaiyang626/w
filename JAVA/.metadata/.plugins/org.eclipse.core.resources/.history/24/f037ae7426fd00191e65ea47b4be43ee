@@ -1,0 +1,5 @@
+package demo.entity;
+
+public class TagCustom extends Tag {
+
+}

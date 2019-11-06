@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="demo.GoodsMapper.TypeBrandMapper">
+<select id="findTypeBrandByTypeId" parameterType="int" 
+	resultMap="TypeBrandMap">
+	<!-- resultType="demo.entity.MemberAddress"> -->
+	select
+	bd.*,gd.type_id,gd.name as type_name,gd.disabled as type_disabled,
+	gd.creatime as type_creatime,gd.modifytime as type_modifytime
+	FROM ms_goods_type as gd
+	join ms_brand as bd
+	join ms_type_brand as tb
+	where gd.type_id = #{type_id}
+	and gd.type_id = tb.type_id
+	and bd.brand_id = tb.brand_id
+	</select>
+	<resultMap type="demo.entity.TypeBrandCustom"
+		id="TypeBrandMap">
+		<id column="type_id" property="type_id" />
+		<result column="type_name" property="name" />
+		<result column="params" property="params" />
+		<result column="type_disabled" property="disabled" />
+		<result column="is_physical" property="is_physical" />
+		<result column="type_creatime" property="creatime" />
+		<result column="type_modifytime" property="modifytime" />
+		<collection property="bands" javaType="java.util.List"
+			ofType="demo.entity.Band">
+				<id column="brand_id" property="brand_id" />
+				<result column="type_id" property="type_id" />
+				<result column="creatime" property="creatime" />
+				<result column="keywords" property="keywords" />
+				<result column="logo" property="logo" />
+				<result column="name" property="name" />
+				<result column="url" property="url" />
+				<result column="creatime" property="creatime" />
+				<result column="modifytime" property="modifytime" />
+		</collection>
+	</resultMap>
+<!-- 
+	<resultMap type="demo.entity.goods_type"
+		id="TypeBrandMap">
+		<id column="type_id" property="type_id" />
+		<result column="type_name" property="name" />
+		<result column="params" property="params" />
+		<result column="type_disabled" property="disabled" />
+		<result column="is_physical" property="is_physical" />
+		<result column="type_creatime" property="creatime" />
+		<result column="type_modifytime" property="modifytime" />
+		<collection property="typeBrands" javaType="java.util.List"
+			ofType="demo.entity.TypeBrand">
+			-->
+			<!-- 
+			<result column="tb_id" property="id" />
+			<result column="tb_brand_id" property="brand_id" />
+			<result column="tb_type_id" property="type_id" />
+			<result column="tb_creatime" property="creatime" />
+			<result column="tb_modifytime" property="modifytime" />
+			 -->
+			 <!-- 
+			<association property="band" javaType="demo.entity.Band">
+				<id column="brand_id" property="brand_id" />
+				<result column="type_id" property="type_id" />
+				<result column="creatime" property="creatime" />
+				<result column="keywords" property="keywords" />
+				<result column="logo" property="logo" />
+				<result column="name" property="name" />
+				<result column="url" property="url" />
+				<result column="creatime" property="creatime" />
+				<result column="modifytime" property="modifytime" />
+			</association>
+		</collection>
+ 
+	</resultMap>
+-->	
+</mapper>

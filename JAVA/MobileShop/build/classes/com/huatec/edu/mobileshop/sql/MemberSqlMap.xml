@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<mapper namespace="com,huatec.edu.mobileshop.dao.MemberDao">
+<!-- 缓存配置 -->
+<cache eviction="LRU" flushInterval="3000" size="512" readOnly="true"/>
+<!--insert元素，在此元素内写增加的sql语句，parameterType：参数类型 -->
+<!--SQL语句中传入的参数类型用#【XX】-->
+<!--useGeneratedKeys=“true” keyProperty=“member_id”获取自增的主键并存入member_id中-->
+
+</mapper>

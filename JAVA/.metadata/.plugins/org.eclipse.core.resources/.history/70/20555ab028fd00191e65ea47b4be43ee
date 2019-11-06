@@ -1,0 +1,5 @@
+package demo.GoodsMapper;
+
+public interface TagMapper {
+
+}
